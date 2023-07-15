@@ -13,14 +13,14 @@ func main() {
 		fmt.Scanf("%d", &q[i])
 	}
 
-	q_sort(q, 0, n-1)
+	QSort(q, 0, n-1)
 	for i := 0; i < n; i++ {
 		fmt.Printf("%d ", q[i])
 	}
 }
 
 // 快排模板
-func q_sort(q []int, l, r int) {
+func QSort(q []int, l, r int) {
 	if l >= r {
 		return
 	}
@@ -43,6 +43,6 @@ func q_sort(q []int, l, r int) {
 			q[i], q[j] = q[j], q[i]
 		}
 	}
-	q_sort(q, l, j)
-	q_sort(q, j+1, r)
+	QSort(q, l, j)
+	QSort(q, j+1, r)
 }
