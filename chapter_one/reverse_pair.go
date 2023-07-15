@@ -15,18 +15,18 @@ func main() {
 		fmt.Scanf("%d", &q[i])
 	}
 	tmp := make([]int, n)
-	merge_sort(q, tmp, 0, n-1)
+	MergeSort(q, tmp, 0, n-1)
 	fmt.Printf("%d", ans)
 }
 
 // 归并模板
-func merge_sort(q, tmp []int, l, r int) {
+func MergeSort(q, tmp []int, l, r int) {
 	if l >= r {
 		return
 	}
 	mid := (l + r) / 2
-	merge_sort(q, tmp, l, mid)
-	merge_sort(q, tmp, mid+1, r)
+	MergeSort(q, tmp, l, mid)
+	MergeSort(q, tmp, mid+1, r)
 	k, i, j := 0, l, mid+1
 	for i <= mid && j <= r {
 		if q[i] <= q[j] {
